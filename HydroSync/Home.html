@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Inicial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="CSS/Home.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Tela de Carregamento -->
+<div id="loader">
+  <div class="wrapper">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+    <span>HydroSync</span>
+  </div>
+</div>
+
+<!-- Botão de Dark Mode -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Conteúdo Principal -->
+  <!-- Header -->
+  <header class="animated">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="logo">
+          <i class="fas fa-tint logo-icon"></i>
+          <span class="logo-text">HydroSync</span>
+        </div>
+        <div class="page-title">Página Inicial</div>
+      </div>
+      <div class="header-info">
+        <div class="header-info-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>24/7 Monitoramento</span>
+        </div>
+        <div class="header-info-item">
+          <i class="fas fa-leaf"></i>
+          <span>12% de economia</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Estatísticas -->
+    <h2 class="section-title animated">Resumo do Consumo</h2>
+    <div class="stats">
+      <div class="card animated delay-1">
+        <div class="icon-container"><i class="fas fa-user icon"></i></div>
+        <div class="text">
+          <p>Média de consumo por pessoa (Litros)</p>
+          <h2>142 L</h2>
+        </div>
+      </div>
+      <div class="card animated delay-2">
+        <div class="icon-container"><i class="fas fa-tint icon"></i></div>
+        <div class="text">
+          <p>Sua faixa de consumo residencial</p>
+          <h2>Regular</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monitoramento em Tempo Real -->
+    <h2 class="section-title animated delay-1">Monitoramento em Tempo Real</h2>
+    <div class="carousel-container animated delay-2">
+      <div class="carousel" id="carousel">
+        <div class="slide">
+          <div class="realtime">
+            <h2>571 L</h2>
+            <hr />
+            <div class="info">Consumo Diário<br />4 Moradores • Atualizado agora</div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="realtime">
+            <h2>3.9 m³</h2>
+            <hr />
+            <div class="info">Consumo Semanal<br />4 Moradores • Últimos 7 dias</div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="realtime">
+            <h2>17.1 m³</h2>
+            <hr />
+            <div class="info">Consumo Mensal<br />4 Moradores • Últimos 30 dias</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+
+    <!-- Funcionalidades -->
+    <h2 class="section-title animated delay-1">Funcionalidades</h2>
+    <div class="features">
+      <a href="Historico.html" class="feature-card animated delay-1">
+        <div class="icon-container"><i class="fas fa-clipboard-list icon"></i></div>
+        <div>
+          <h4>Histórico de consumo</h4>
+          <p>Acompanhe seus consumos anteriores com gráficos interativos e análises detalhadas por período.</p>
+        </div>
+      </a>
+
+      <a href="Simulador.html" class="feature-card animated delay-2">
+        <div class="icon-container"><i class="fas fa-clipboard-list icon"></i></div>
+        <div>
+          <h4>Simulador de fatura</h4>
+          <p>Simule sua fatura mensal baseada em diferentes cenários de consumo e tarifas aplicáveis.</p>
+        </div>
+      </a>
+
+      <div class="feature-card animated delay-3">
+        <div class="icon-container"><i class="fas fa-file-invoice-dollar icon"></i></div>
+        <div>
+          <h4>Faturas mensais</h4>
+          <p>Veja, compare e pague suas faturas de forma rápida e segura com histórico completo.</p>
+        </div>
+      </div>
+
+      <a href="Notificações.html" class="feature-card animated delay-2">
+        <div class="icon-container">
+          <i class="fas fa-bell icon"></i>
+        </div>
+        <div>
+          <h4>Notificações</h4>
+          <p>Alertas inteligentes sobre picos de consumo, vazamentos detectados e dicas de economia.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</body>
+<script src="JS/Home.js">
+</script>
+
+</html>

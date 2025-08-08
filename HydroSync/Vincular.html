@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vincular Hidrômetro | HydroSync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="CSS/Autenticacao.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Botão de Dark Mode -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Conteúdo Principal -->
+    <div class="auth-container">
+      <div class="auth-card animated">
+        <div class="auth-header">
+          <div class="logo">
+            <i class="fas fa-tint logo-icon"></i>
+            <span class="logo-text">HydroSync</span>
+          </div>
+          <h2 class="auth-title">Vincular Hidrômetro</h2>
+          <p class="auth-subtitle">
+            Conecte seu hidrômetro para começar o monitoramento
+          </p>
+        </div>
+
+        <form class="auth-form">
+          <div class="form-group">
+            <label for="meterNumber">Número do Hidrômetro</label>
+            <div class="input-container">
+              <i class="fas fa-water input-icon"></i>
+              <input
+                type="text"
+                id="meterNumber"
+                placeholder="Digite o número do hidrômetro"
+                required
+              />
+            </div>
+            <p class="hint-text">O número está localizado na frente do seu hidrômetro</p>
+          </div>
+
+          <div class="form-group">
+            <label for="meterLocation">Localização</label>
+            <div class="input-container">
+              <i class="fas fa-map-marker-alt input-icon"></i>
+              <input
+                type="text"
+                id="meterLocation"
+                placeholder="Ex: Cozinha, Jardim, Garagem"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="meterType">Tipo de Hidrômetro</label>
+            <div class="input-container">
+              <i class="fas fa-info-circle input-icon"></i>
+              <select id="meterType" class="styled-select" required>
+                <option value="" disabled selected>Selecione o tipo</option>
+                <option value="residential">Ultrasonico</option>
+                <option value="commercial">Volumetrico</option>
+                <option value="industrial">Velocimetrico</option>
+                <option value="smart">Inteligente (IoT)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="installationDate">Data de Instalação</label>
+            <div class="input-container">
+              <i class="fas fa-calendar-alt input-icon"></i>
+              <input
+                type="date"
+                id="installationDate"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="ownership" required />
+            <label for="ownership"
+              >Eu confirmo que este hidrômetro está sob minha responsabilidade</label
+            >
+          </div>
+
+          <button type="submit" class="auth-btn">
+            <i class="fas fa-link"></i> Vincular Hidrômetro
+          </button>
+
+          <div class="auth-footer">
+            Precisa de ajuda? 
+            <a href="#" class="auth-link">Consulte nosso guia</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="auth-side-panel animated delay-1">
+        <div class="side-panel-content">
+          <h3>Por que vincular seu hidrômetro?</h3>
+          <p>
+            Conectar seu hidrômetro ao HydroSync permite um monitoramento preciso e em tempo real do seu consumo de água.
+          </p>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <i class="fas fa-bell"></i>
+              <span>Alertas de vazamentos em tempo real</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Gráficos detalhados de consumo</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-money-bill-wave"></i>
+              <span>Estimativa de custos mensais</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-history"></i>
+              <span>Histórico completo de consumo</span>
+            </div>
+          </div>
+          <div class="qr-guide">
+            <h4>Hidrômetro inteligente?</h4>
+            <p>Não nós da HydroSync transformamos o seu hidrômetro em uma ferramenta onde você podera acompanhar isso e muito mais.</p>
+            <button class="secondary-btn">
+              <i class="fas fa-qrcode"></i> Abrir leitor de QR Code
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/Home.js"></script>
+    <script src="JS/VincularHidrometro.js"></script>
+  </body>
+</html>

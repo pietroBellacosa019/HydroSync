@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | HydroSync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"rel="stylesheet"/>
+    <link href="CSS/Autenticacao.css" rel="stylesheet" />
+  </head>
+  <body>
+<!-- Botão de Dark Mode -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Conteúdo Principal -->
+    <div class="auth-container">
+      <div class="auth-card animated">
+        <div class="auth-header">
+          <div class="logo">
+            <i class="fas fa-tint logo-icon"></i>
+            <span class="logo-text">HydroSync</span>
+          </div>
+          <h2 class="auth-title">Acesse sua conta</h2>
+          <p class="auth-subtitle">
+            Gerencie seu consumo de água de forma inteligente
+          </p>
+        </div>
+
+        <form class="auth-form">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <div class="input-container">
+              <i class="fas fa-envelope input-icon"></i>
+              <input
+                type="email"
+                id="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <div class="input-container">
+              <i class="fas fa-lock input-icon"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Digite sua senha"
+                required
+              />
+              <i class="fas fa-eye-slash password-toggle"></i>
+            </div>
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+          </div>
+
+          <button type="submit" class="auth-btn">
+            <i class="fas fa-sign-in-alt"></i> Entrar
+          </button>
+
+          <div class="auth-divider">
+            <span>OU</span>
+          </div>
+
+          <button type="button" class="auth-btn google-btn">
+            <i class="fab fa-google"></i> Continuar com Google
+          </button>
+
+          <div class="auth-footer">
+            Não tem uma conta?
+            <a href="SingIn.html" class="auth-link">Cadastre-se</a>
+          </div>
+        </form>
+      </div>
+      <div class="auth-side-panel animated delay-1">
+        <div class="side-panel-content">
+          <h3>Bem-vindo de volta!</h3>
+          <p>
+            Acesse sua conta para monitorar seu consumo em tempo real e receber
+            alertas personalizados.
+          </p>
+          <div class="features-list">
+            <div class="feature-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Gráficos de consumo detalhados</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-bell"></i>
+              <span>Alertas inteligentes</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-leaf"></i>
+              <span>Dicas personalizadas de economia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="JS/Home.js"></script>
+    <script src="JS/Login.js"></script>
+  </body>
+</html>

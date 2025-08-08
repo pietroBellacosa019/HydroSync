@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Tarifas | HydroSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="CSS/Simulador.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Botão de Dark Mode -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Conteúdo Principal -->
+  <!-- Header -->
+    <header class="animated">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="Home.html" class="logo"><i class="fas fa-tint logo-icon"></i><span class="logo-text">HydroSync</span></a>
+          <div class="page-title">Simulador de Tarifa</div>
+        </div>
+        <div class="header-info">
+          <div class="header-info-item">
+            <i class="fas fa-shield-alt"></i><span>24/7 Monitoramento</span>
+          </div>
+          <div class="header-info-item">
+            <i class="fas fa-leaf"></i><span>12% de economia</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  <div class="container">
+    <!-- Formulário de Simulação -->
+    <div class="simulator-card animated">
+      <h2 class="section-title">Simule sua Fatura</h2>
+      <div class="simulator-form">
+        <div class="form-group">
+          <label for="consumo">Consumo (m³)</label>
+          <div class="input-container">
+            <input type="number" id="consumo" min="0" max="500" step="1" placeholder="Digite o consumo em m³">
+            <i class="fas fa-water input-icon"></i>
+          </div>
+          <div class="range-container">
+            <input type="range" id="consumoRange" min="0" max="200" step="1" value="0">
+            <div class="range-labels">
+              <span>0</span>
+              <span>50</span>
+              <span>100</span>
+              <span>150</span>
+              <span>200+</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="moradores">Número de Moradores</label>
+          <div class="input-container">
+            <input type="number" id="moradores" min="1" max="20" step="1" value="4">
+            <i class="fas fa-users input-icon"></i>
+          </div>
+        </div>
+
+        <button id="calcularBtn" class="btn-primary">
+          <i class="fas fa-calculator"></i> Calcular
+        </button>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div id="resultados" class="results-container animated delay-1" style="display: none;">
+      <h2 class="section-title">Resultado da Simulação</h2>
+      
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-icon"><i class="fas fa-tint"></i></div>
+          <div class="result-content">
+            <h3>Água</h3>
+            <div class="result-value" id="valorAgua">R$ 0,00</div>
+          </div>
+        </div>
+        
+        <div class="result-card">
+          <div class="result-icon"><i class="fas fa-recycle"></i></div>
+          <div class="result-content">
+            <h3>Esgoto</h3>
+            <div class="result-value" id="valorEsgoto">R$ 0,00</div>
+          </div>
+        </div>
+        
+        <div class="result-card highlight">
+          <div class="result-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="result-content">
+            <h3>Total</h3>
+            <div class="result-value" id="valorTotal">R$ 0,00</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="additional-info">
+        <div class="info-card">
+          <h4><i class="fas fa-chart-line"></i> Consumo por Pessoa</h4>
+          <p id="consumoPessoa">0 m³/pessoa</p>
+        </div>
+        
+        <div class="info-card">
+          <h4><i class="fas fa-money-bill-wave"></i> Faixa Tarifária</h4>
+          <p id="faixaTarifaria">-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela de Tarifas -->
+    <div class="tariff-table-container animated delay-2">
+      <h2 class="section-title">Tabela de Tarifas</h2>
+      <div class="info-box">
+        <i class="fas fa-info-circle"></i>
+        <p>A tarifa é progressiva por faixa (tarifa binômia). Até 6 m³: valor fixo mínimo de R$ 13,61. A partir de 7 m³: valor por m³ adicional. Esgoto é 100% da tarifa de água.</p>
+      </div>
+      
+      <div class="table-wrapper">
+        <table class="tariff-table">
+          <thead>
+            <tr>
+              <th>Faixa (m³)</th>
+              <th>Tarifa Água (R$)</th>
+              <th>Tarifa Esgoto (R$)</th>
+            </tr>
+          </thead>
+          <tbody id="tariffTableBody">
+            <!-- Preenchido via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/Simulador.js"></script>
+</body>
+
+</html>

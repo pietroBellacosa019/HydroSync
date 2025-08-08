@@ -1,0 +1,624 @@
+/* Estilos gerais para autenticação */
+:root {
+  --primary-color: #2a4f95;
+  --primary-dark: #1a1a2e;
+  --text-light: #f1f1f1;
+  --text-dark: #1e1e1e;
+  --bg-light: #ffffff;
+  --bg-dark: #1e1e1e;
+  --card-bg-light: #ffffff;
+  --card-bg-dark: #1e1e1e;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 15px var(--shadow-dark);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos base */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Container de autenticação */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Card de autenticação */
+.auth-card {
+  flex: 1;
+  max-width: 600px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg-light);
+  box-shadow: 0 10px 40px var(--shadow-light);
+  transition: all 0.4s ease;
+}
+
+body.dark-mode .auth-card {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 10px 40px var(--shadow-dark);
+}
+
+/* Painel lateral */
+.auth-side-panel {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1f3b74 100%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode .auth-side-panel {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #16213e 100%);
+}
+
+.auth-side-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: rotate 15s linear infinite;
+  z-index: 0;
+}
+
+.side-panel-content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Header de autenticação */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+body.dark-mode .logo-icon {
+  color: #3a6bc8;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+}
+
+body.dark-mode .logo-text {
+  color: var(--text-light);
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+body.dark-mode .auth-title {
+  color: var(--text-light);
+}
+
+.auth-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+body.dark-mode .auth-subtitle {
+  color: #aaa;
+}
+
+/* Formulários */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.half-width {
+  flex: 1;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+body.dark-mode label {
+  color: var(--text-light);
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+body.dark-mode .input-icon {
+  color: #aaa;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #666;
+}
+
+body.dark-mode .password-toggle {
+  color: #aaa;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg-light);
+  color: var(--text-dark);
+}
+
+body.dark-mode input {
+  border-color: #444;
+  background-color: var(--card-bg-dark);
+  color: var(--text-light);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(42, 79, 149, 0.2);
+}
+
+body.dark-mode input:focus {
+  border-color: #3a6bc8;
+  box-shadow: 0 0 0 3px rgba(58, 107, 200, 0.3);
+}
+
+/* Botões */
+.auth-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #1f3b74;
+  transform: translateY(-2px);
+}
+
+body.dark-mode .auth-btn {
+  background-color: var(--primary-dark);
+}
+
+body.dark-mode .auth-btn:hover {
+  background-color: #16213e;
+}
+
+.google-btn {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+body.dark-mode .google-btn {
+  background-color: #2d2d2d;
+  color: white;
+  border-color: #444;
+}
+
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+
+body.dark-mode .google-btn:hover {
+  background-color: #3d3d3d;
+}
+
+/* Links */
+.forgot-password {
+  font-size: 0.85rem;
+  color: #665;
+  text-align: right;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .forgot-password {
+  color: #aaa;
+}
+
+.forgot-password:hover {
+  color: var(--primary-color);
+}
+
+body.dark-mode .forgot-password:hover {
+  color: #3a6bc8;
+}
+
+.auth-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .auth-link {
+  color: #3a6bc8;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Divisor */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .auth-divider {
+  color: #aaa;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+body.dark-mode .auth-divider::before,
+body.dark-mode .auth-divider::after {
+  background-color: #444;
+}
+
+/* Footer */
+.auth-footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+body.dark-mode .auth-footer {
+  color: #aaa;
+}
+
+/* Lista de features/benefícios */
+.features-list,
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.feature-item,
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature-item i,
+.benefit-item i {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Força da senha */
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  height: 4px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  margin-bottom: 0.3rem;
+  overflow: hidden;
+}
+
+body.dark-mode .strength-bar {
+  background-color: #444;
+}
+
+.strength-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 20%;
+  background-color: #e74c3c;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.strength-text {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+body.dark-mode .strength-text {
+  color: #aaa;
+}
+
+.strength-text span {
+  font-weight: 600;
+}
+
+/* Checkbox */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.checkbox-group input {
+  width: auto;
+  padding: 0;
+}
+
+.checkbox-group label {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.checkbox-group a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+body.dark-mode .checkbox-group a {
+  color: #3a6bc8;
+}
+
+.checkbox-group a:hover {
+  text-decoration: underline;
+}
+
+/* Animações */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .auth-side-panel {
+    display: none;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .half-width {
+    width: 100%;
+  }
+  
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Estilos específicos para Vincular Hidrômetro */
+
+.hint-text {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+body.dark-mode .hint-text {
+  color: #aaa;
+}
+
+.styled-select {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg-light);
+  color: var(--text-dark);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+body.dark-mode .styled-select {
+  border-color: #444;
+  background-color: var(--card-bg-dark);
+  color: var(--text-light);
+}
+
+.styled-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(42, 79, 149, 0.2);
+}
+
+body.dark-mode .styled-select:focus {
+  border-color: #3a6bc8;
+  box-shadow: 0 0 0 3px rgba(58, 107, 200, 0.3);
+}
+
+.secondary-btn {
+  padding: 10px 15px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(42, 79, 149, 0.1);
+}
+
+body.dark-mode .secondary-btn {
+  color: #3a6bc8;
+  border-color: #3a6bc8;
+}
+
+body.dark-mode .secondary-btn:hover {
+  background-color: rgba(58, 107, 200, 0.1);
+}
+
+.qr-guide {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.qr-guide h4 {
+  margin-bottom: 0.5rem;
+}
+
+.qr-guide p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}

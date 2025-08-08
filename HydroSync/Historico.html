@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Consumo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="CSS/Historico.css" rel="stylesheet" >
+</head>
+<body>
+  <!-- Header -->
+ <header class="animated">
+  <div class="header-content">
+    <div class="header-left">
+      <a href="Home.html" class="logo"><i class="fas fa-tint logo-icon"></i><span class="logo-text">HydroSync</span></a>
+      <div class="page-title">Histórico de Consumo</div>
+    </div>
+    <div class="header-info">
+      <div class="header-info-item"><i class="fas fa-shield-alt"></i><span>24/7 Monitoramento</span></div>
+      <div class="header-info-item"><i class="fas fa-leaf"></i><span>12% de economia</span></div>
+    </div>
+  </div>
+</header>
+
+  <!-- Conteúdo principal -->
+  <div class="dashboard-container animated delay-1">
+    <h2 class="section-title animated">Gráfico de Consumo</h2>
+    <div class="filter-buttons">
+      <button id="diario" class="active">Diário</button>
+      <button id="semanal">Semanal</button>
+      <button id="mensal">Mensal</button>
+    </div>
+    <div class="chart-container"><canvas id="consumoChart"></canvas></div>
+
+    <h2 class="section-title animated delay-1">Estatísticas do Consumo</h2>
+    <div class="stat-cards">
+      <div class="stat-card animated delay-1"><div class="stat-card-content"><h4><i class="fas fa-calculator"></i> Consumo Médio</h4><p id="media">-</p></div></div>
+      <div class="stat-card animated delay-2"><div class="stat-card-content"><h4><i class="fas fa-arrow-up"></i> Consumo Máximo</h4><p id="maximo">-</p></div></div>
+      <div class="stat-card animated delay-3"><div class="stat-card-content"><h4><i class="fas fa-arrow-down"></i> Consumo Mínimo</h4><p id="minimo">-</p></div></div>
+      <div class="stat-card animated delay-4"><div class="stat-card-content"><h4><i class="fas fa-users"></i> Média por Morador</h4><p id="porMorador">-</p></div></div>
+    </div>
+    <div class="info-note">Os dados podem ter sido arredondados para facilitar a visualização. Isso não trás impacto a conta, apenas para sua visualização.</div>
+  </div>
+
+  <!-- Dark Mode -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
+
+  <script src="JS/Historico.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro | HydroSync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylsheet"/>
+    <link href="CSS/Autenticacao.css" rel="stylesheet" />
+  </head>
+  <body>
+<!-- Botão de Dark Mode -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Conteúdo Principal -->
+    <div class="auth-container">
+      <div class="auth-card animated">
+        <div class="auth-header">
+          <div class="logo">
+            <i class="fas fa-tint logo-icon"></i>
+            <span class="logo-text">HydroSync</span>
+          </div>
+          <h2 class="auth-title">Crie sua conta</h2>
+          <p class="auth-subtitle">
+            Comece a monitorar seu consumo de água hoje mesmo
+          </p>
+        </div>
+
+        <form class="auth-form">
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="firstName">Nome</label>
+              <div class="input-container">
+                <i class="fas fa-user input-icon"></i>
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="Digite seu nome"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group half-width">
+              <label for="lastName">Sobrenome</label>
+              <div class="input-container">
+                <i class="fas fa-user input-icon"></i>
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="Digite seu sobrenome"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">E-mail</label>
+            <div class="input-container">
+              <i class="fas fa-envelope input-icon"></i>
+              <input
+                type="email"
+                id="signupEmail"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Senha</label>
+            <div class="input-container">
+              <i class="fas fa-lock input-icon"></i>
+              <input
+                type="password"
+                id="signupPassword"
+                placeholder="Crie uma senha"
+                required
+              />
+              <i class="fas fa-eye-slash password-toggle"></i>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar"></div>
+              <div class="strength-text">
+                Força da senha: <span>Fraca</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar Senha</label>
+            <div class="input-container">
+              <i class="fas fa-lock input-icon"></i>
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirme sua senha"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms" required />
+            <label for="terms"
+              >Eu concordo com os <a href="#">Termos de Serviço</a> e
+              <a href="#">Política de Privacidade</a></label
+            >
+          </div>
+
+          <button type="submit" class="auth-btn">
+            <i class="fas fa-user-plus"></i> Criar conta
+          </button>
+
+          <div class="auth-footer">
+            Já tem uma conta?
+            <a href="login.html" class="auth-link">Faça login</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="auth-side-panel animated delay-1">
+        <div class="side-panel-content">
+          <h3>Junte-se a nós!</h3>
+          <p>
+            Cadastre-se para começar a economizar água e receber insights
+            valiosos sobre seu consumo.
+          </p>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <i class="fas fa-chart-pie"></i>
+              <span>Relatórios mensais detalhados</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-trophy"></i>
+              <span>Desafios de economia</span>
+            </div>
+            <div class="benefit-item">
+              <i class="fas fa-percentage"></i>
+              <span>Comparativo com média regional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/Home.js"></script>
+    <script src="JS/Login.js"></script>
+  </body>
+</html>

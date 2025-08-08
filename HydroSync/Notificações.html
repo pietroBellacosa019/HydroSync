@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notificações | HydroSync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="CSS/Notificações.css" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="animated">
+    <div class="header-content">
+      <div class="header-left">
+        <a href="Home.html" class="logo">
+          <i class="fas fa-tint logo-icon"></i>
+          <span class="logo-text">HydroSync</span>
+        </a>
+        <div class="page-title">Notificações</div>
+      </div>
+      <div class="header-info">
+        <div class="header-info-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>24/7 Monitoramento</span>
+        </div>
+        <div class="header-info-item">
+          <i class="fas fa-leaf"></i>
+          <span>12% de economia</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="notifications-container">
+    <div class="notification-filters animated delay-1">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-inbox"></i> Todas <span class="filter-badge">3</span>
+      </button>
+      <button class="filter-btn" data-filter="notice">
+        <i class="fas fa-info-circle"></i> Recados
+      </button>
+      <button class="filter-btn" data-filter="problem">
+        <i class="fas fa-exclamation-triangle"></i> Problemas <span class="filter-badge">2</span>
+      </button>
+      <button class="filter-btn" data-filter="alert">
+        <i class="fas fa-bell"></i> Alertas <span class="filter-badge">1</span>
+      </button>
+      <button class="filter-btn" data-filter="invoice">
+        <i class="fas fa-file-invoice-dollar"></i> Faturas <span class="filter-badge">1</span>
+      </button>
+      <button class="filter-btn" data-filter="archived">
+        <i class="fas fa-archive"></i> Arquivadas
+      </button>
+    </div>
+
+    <div class="notifications-header">
+      <h3>Suas Notificações</h3>
+      <button class="mark-all-read">
+        <i class="fas fa-envelope-open"></i> Marcar todas como lidas
+      </button>
+    </div>
+
+    <div class="notifications-area animated delay-2">
+      <!-- Notificação 1 - Fatura (Não lida) -->
+      <div class="notification-card unread" data-category="invoice" data-pinned="false" data-read="false" data-archived="false">
+        <div class="notification-header">
+          <div class="notification-icon-container">
+            <i class="fas fa-file-invoice-dollar notification-icon"></i>
+          </div>
+          <div class="notification-title-wrapper">
+            <h3 class="notification-title">Sua fatura vence dia 28 desse mês</h3>
+            <div class="notification-meta">
+              <span class="category-badge">Fatura</span>
+              <span class="notification-date">27/07/25 - 17:07</span>
+            </div>
+          </div>
+          <div class="notification-actions-toggle">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="notification-message">
+          A fatura desse mês está próxima da data de vencimento, procure uma
+          lotérica para realizar o pagamento ou utilize o QR Code para fazer o
+          pagamento via pix. Caso tenha alguma dúvida sobre os valores ou
+          formas de pagamento, entre em contato com nosso suporte através do
+          aplicativo.
+        </div>
+        <div class="notification-actions">
+          <button class="action-btn archive-btn">
+            <i class="fas fa-archive"></i> Arquivar
+          </button>
+          <button class="action-btn pin-btn">
+            <i class="fas fa-thumbtack"></i> Fixar
+          </button>
+          <button class="action-btn read-btn">
+            <i class="fas fa-envelope"></i> Marcar como Lida
+          </button>
+          <button class="action-btn delete-btn">
+            <i class="fas fa-trash"></i> Excluir
+          </button>
+        </div>
+      </div>
+
+      <!-- Notificação 2 - Problema (Não lida) -->
+      <div class="notification-card unread" data-category="problem" data-pinned="false" data-read="false" data-archived="false">
+        <div class="notification-header">
+          <div class="notification-icon-container">
+            <i class="fas fa-exclamation-triangle notification-icon"></i>
+          </div>
+          <div class="notification-title-wrapper">
+            <h3 class="notification-title">Problemas com o Sinal do Sensor</h3>
+            <div class="notification-meta">
+              <span class="category-badge">Problema</span>
+              <span class="notification-date">27/07/25 - 16:47</span>
+            </div>
+          </div>
+          <div class="notification-actions-toggle">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="notification-message">
+          Problema notificado no sensor do HydroSync detectado as 16:45,
+          iremos enviar um técnico para vistoria e manutenção caso haja
+          problemas. O técnico entrará em contato para agendar a visita.
+          Durante este período, o monitoramento continuará funcionando, porém
+          com limitações. Pedimos desculpas pelo inconveniente.
+        </div>
+        <div class="notification-actions">
+          <button class="action-btn archive-btn">
+            <i class="fas fa-archive"></i> Arquivar
+          </button>
+          <button class="action-btn pin-btn">
+            <i class="fas fa-thumbtack"></i> Fixar
+          </button>
+          <button class="action-btn read-btn">
+            <i class="fas fa-envelope"></i> Marcar como Lida
+          </button>
+          <button class="action-btn delete-btn">
+            <i class="fas fa-trash"></i> Excluir
+          </button>
+        </div>
+      </div>
+
+      <!-- Notificação 3 - Problema (Lida) -->
+      <div class="notification-card" data-category="problem" data-pinned="false" data-read="true" data-archived="false">
+        <div class="notification-header">
+          <div class="notification-icon-container">
+            <i class="fas fa-exclamation-triangle notification-icon"></i>
+          </div>
+          <div class="notification-title-wrapper">
+            <h3 class="notification-title">Problemas com o Sinal do Sensor</h3>
+            <div class="notification-meta">
+              <span class="category-badge">Problema</span>
+              <span class="notification-date">27/07/25 - 16:47</span>
+            </div>
+          </div>
+          <div class="notification-actions-toggle">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="notification-message">
+          Problema notificado no sensor do HydroSync detectado as 16:45,
+          iremos enviar um técnico para vistoria e manutenção caso haja
+          problemas. O técnico entrará em contato para agendar a visita.
+          Durante este período, o monitoramento continuará funcionando, porém
+          com limitações. Pedimos desculpas pelo inconveniente.
+        </div>
+        <div class="notification-actions">
+          <button class="action-btn archive-btn">
+            <i class="fas fa-archive"></i> Arquivar
+          </button>
+          <button class="action-btn pin-btn">
+            <i class="fas fa-thumbtack"></i> Fixar
+          </button>
+          <button class="action-btn read-btn">
+            <i class="fas fa-envelope-open"></i> Marcar como Não Lida
+          </button>
+          <button class="action-btn delete-btn">
+            <i class="fas fa-trash"></i> Excluir
+          </button>
+        </div>
+      </div>
+
+      <!-- Notificação 4 - Alerta (Não lida) -->
+      <div class="notification-card unread" data-category="alert" data-pinned="false" data-read="false" data-archived="false">
+        <div class="notification-header">
+          <div class="notification-icon-container">
+            <i class="fas fa-bell notification-icon"></i>
+          </div>
+          <div class="notification-title-wrapper">
+            <h3 class="notification-title">Consumo de Água Acima do Normal</h3>
+            <div class="notification-meta">
+              <span class="category-badge">Alerta</span>
+              <span class="notification-date">24/07/25 - 08:15</span>
+            </div>
+          </div>
+          <div class="notification-actions-toggle">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="notification-message">
+          Detectamos um aumento incomum no consumo de água nas últimas 24
+          horas. Verifique possíveis vazamentos ou uso excessivo. Se precisar
+          de ajuda, entre em contato com nosso suporte técnico.
+        </div>
+        <div class="notification-actions">
+          <button class="action-btn archive-btn">
+            <i class="fas fa-archive"></i> Arquivar
+          </button>
+          <button class="action-btn pin-btn">
+            <i class="fas fa-thumbtack"></i> Fixar
+          </button>
+          <button class="action-btn read-btn">
+            <i class="fas fa-envelope"></i> Marcar como Lida
+          </button>
+          <button class="action-btn delete-btn">
+            <i class="fas fa-trash"></i> Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal de Confirmação -->
+  <div class="confirm-modal" id="confirmModal">
+    <div class="confirm-content">
+      <div class="confirm-icon">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <h3 class="confirm-title">Confirmar Exclusão</h3>
+      <p class="confirm-text">
+        Tem certeza que deseja excluir esta notificação? Esta ação não pode
+        ser desfeita.
+      </p>
+      <div class="confirm-buttons">
+        <button class="confirm-btn cancel" id="cancelDelete">Cancelar</button>
+        <button class="confirm-btn delete" id="confirmDelete">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark Mode -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script src="JS/Notificações.js"></script>
+</body>
+</html>
